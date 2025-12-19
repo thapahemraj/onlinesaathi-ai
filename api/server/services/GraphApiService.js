@@ -1,4 +1,4 @@
-const client = require('openid-client');
+// openid-client is ESM-only; dynamic import when needed
 const { isEnabled } = require('@librechat/api');
 const { logger } = require('@librechat/data-schemas');
 const { CacheKeys } = require('librechat-data-provider');
@@ -75,7 +75,9 @@ const exchangeTokenForGraphAccess = async (config, accessToken, sub) => {
       .map((scope) => `https://graph.microsoft.com/${scope}`)
       .join(' ');
 
-    const grantResponse = await client.genericGrantRequest(
+    const clientModule = await import('openid-client');
+    const openidClient = clientModule.default || clientModule;
+    const grantResponse = await openidClient.genericGrantRequest(
       config,
       'urn:ietf:params:oauth:grant-type:jwt-bearer',
       {

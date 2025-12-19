@@ -1,4 +1,5 @@
-const client = require('openid-client');
+// openid-client is an ESM module; import dynamically when needed
+// const client = require('openid-client');
 const { logger } = require('@librechat/data-schemas');
 const { CacheKeys } = require('librechat-data-provider');
 const { getOpenIdConfig } = require('~/strategies/openidStrategy');
@@ -45,7 +46,9 @@ async function getGraphApiToken(user, accessToken, scopes, fromCache = true) {
     logger.debug(`[GraphTokenService] Requesting new Graph API token for user: ${user.openidId}`);
     logger.debug(`[GraphTokenService] Requested scopes: ${scopes}`);
 
-    const grantResponse = await client.genericGrantRequest(
+    const clientModule = await import('openid-client');
+    const openidClient = clientModule.default || clientModule;
+    const grantResponse = await openidClient.genericGrantRequest(
       config,
       'urn:ietf:params:oauth:grant-type:jwt-bearer',
       {

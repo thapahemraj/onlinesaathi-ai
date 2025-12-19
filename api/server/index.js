@@ -1,3 +1,40 @@
+// Polyfill `crypto` (globalThis.crypto.randomUUID) for Node < 20
+if (typeof globalThis.crypto === 'undefined' || typeof globalThis.crypto.randomUUID === 'undefined') {
+  try {
+    const { webcrypto } = require('crypto');
+    if (webcrypto && typeof webcrypto.randomUUID === 'function') {
+      globalThis.crypto = webcrypto;
+    } else if (typeof require('crypto').randomUUID === 'function') {
+      globalThis.crypto = { randomUUID: require('crypto').randomUUID };
+    }
+  } catch (e) {
+    // last resort: polyfill with uuid v4 using randomBytes
+    const { randomBytes } = require('crypto');
+    globalThis.crypto = {
+      randomUUID: () => {
+        const bytes = randomBytes(16);
+        // set version bits (UUID v4)
+        bytes[6] = (bytes[6] & 0x0f) | 0x40;
+        bytes[8] = (bytes[8] & 0x3f) | 0x80;
+        const hex = bytes.toString('hex');
+        return `${hex.substr(0,8)}-${hex.substr(8,4)}-${hex.substr(12,4)}-${hex.substr(16,4)}-${hex.substr(20,12)}`;
+      }
+    };
+  }
+}
+
+// Polyfill `File` global for Node < 20 so `undici`'s webidl code doesn't crash
+if (typeof File === 'undefined') {
+  global.File = class File {
+    constructor(chunks, name, options = {}) {
+      this.name = name;
+      this.lastModified = options?.lastModified || Date.now();
+      this.type = options?.type || '';
+      this.size = Array.isArray(chunks) ? chunks.reduce((s, c) => s + (c?.length || c?.byteLength || 0), 0) : 0;
+    }
+  };
+}
+
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
@@ -54,7 +91,11 @@ const startServer = async () => {
   app.disable('x-powered-by');
   app.set('trust proxy', trusted_proxy);
 
-  await seedDatabase();
+  try {
+    await seedDatabase();
+  } catch (err) {
+    logger.warn('[seedDatabase] Seed failed, continuing startup:', err.message || err);
+  }
   const appConfig = await getAppConfig();
   initializeFileStorage(appConfig);
   await performStartupChecks(appConfig);
