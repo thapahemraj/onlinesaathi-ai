@@ -141,7 +141,7 @@ redis-config/
     # Log files would be created here if enabled in config
 ```
 
-## Using with LibreChat
+## Using with Online Saathi
 
 Update your `.env` file based on your chosen Redis configuration:
 

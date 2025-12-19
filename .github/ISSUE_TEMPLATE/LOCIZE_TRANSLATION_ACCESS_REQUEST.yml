@@ -1,5 +1,5 @@
 name: Locize Translation Access Request
-description: Request access to an additional language in Locize for LibreChat translations.
+description: Request access to an additional language in Locize for Online Saathi translations.
 title: "Locize Access Request: "
 labels: ["🌍 i18n", "🔑 access request"]
 body:

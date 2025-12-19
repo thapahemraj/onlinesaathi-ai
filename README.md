@@ -3,7 +3,7 @@
     <img src="client/public/assets/logo.svg" height="256">
   </a>
   <h1 align="center">
-    <a href="https://librechat.ai">LibreChat</a>
+    <a href="https://librechat.ai">Online Saathi</a>
   </h1>
 </p>
 
@@ -53,7 +53,7 @@
 
 - 🤖 **AI Model Selection**:  
   - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Responses API (incl. Azure)
-  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with LibreChat, no proxy required
+  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with Online Saathi, no proxy required
   - Compatible with [Local & Remote AI Providers](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints):
     - Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,
     - OpenRouter, Helicone, Perplexity, ShuttleAI, Deepseek, Qwen, and more
@@ -64,7 +64,7 @@
   - No Privacy Concerns: Fully isolated and secure execution
 
 - 🔦 **Agents & Tools Integration**:  
-  - **[LibreChat Agents](https://www.librechat.ai/docs/features/agents)**:
+  - **[Online Saathi Agents](https://www.librechat.ai/docs/features/agents)**:
     - No-Code Custom Assistants: Build specialized, AI-driven helpers
     - Agent Marketplace: Discover and deploy community-built agents
     - Collaborative Sharing: Share agents with specific users and groups
@@ -115,7 +115,7 @@
   - Supports OpenAI, Azure OpenAI, and Elevenlabs
 
 - 📥 **Import & Export Conversations**:  
-  - Import Conversations from LibreChat, ChatGPT, Chatbot UI  
+  - Import Conversations from Online Saathi, ChatGPT, Chatbot UI  
   - Export conversations as screenshots, markdown, text, json
 
 - 🔍 **Search & Discovery**:  
@@ -135,11 +135,11 @@
 
 [For a thorough review of our features, see our docs here](https://docs.librechat.ai/) 📚
 
-## 🪶 All-In-One AI Conversations with LibreChat
+## 🪶 All-In-One AI Conversations with Online Saathi
 
-LibreChat brings together the future of assistant AIs with the revolutionary technology of OpenAI's ChatGPT. Celebrating the original styling, LibreChat gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.
+Online Saathi brings together the future of assistant AIs with the revolutionary technology of OpenAI's ChatGPT. Celebrating the original styling, Online Saathi gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.
 
-With LibreChat, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.
+With Online Saathi, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.
 
 [![Watch the video](https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif)](https://www.youtube.com/watch?v=ilfwGQtJNlI)
 
@@ -194,7 +194,7 @@ Contributions, suggestions, bug reports and fixes are welcome!
 
 For new features, components, or extensions, please open an issue and discuss before sending a PR.
 
-If you'd like to help translate LibreChat into your language, we'd love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
+If you'd like to help translate Online Saathi into your language, we'd love your contribution! Improving our translations not only makes Online Saathi more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
 
 ---
 
@@ -208,7 +208,7 @@ If you'd like to help translate LibreChat into your language, we'd love your con
 
 ## 🎉 Special Thanks
 
-We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
+We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in Online Saathi.
 
 <p align="center">
   <a href="https://locize.com" target="_blank" rel="noopener noreferrer">
